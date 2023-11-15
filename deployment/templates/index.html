@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'> -->
+<!-- <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'> -->
+<!-- <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'> -->
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'> -->
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Clicked On Add</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="number" name="Daily Time Spent on Site" placeholder="Daily Time Spent on Site" step="0.01" required="required" />
+        <input type="number" name="Age" placeholder="Age" step="0.01" required="required" />
+		<input type="number" name="Area Income" placeholder="Area Income" step="0.01" required="required" />
+		<input type="number" name="Daily Internet Usage" placeholder="Daily Internet Usage" step="0.01" required="required" />
+<!--        <input type="number" name="Male" placeholder="Male" required="required" />-->
+        Male:
+        <label> no:</label>
+        <input type="radio"  name="integervalue"  value="0">
+        <label> yes:</label>
+        <input type="radio"  name="integervalue" value="1">
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
